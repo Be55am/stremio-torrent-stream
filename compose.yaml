@@ -5,6 +5,7 @@ services:
     environment:
       - JACKETT_URL=http://jackett:9117
       - JACKETT_KEY=${JACKETT_KEY}
+      - TORRENT_TIMEOUT=15000
     ports:
       - 58827:58827
       - 58828:58828
