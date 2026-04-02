@@ -104,6 +104,9 @@ export const streamHandler = async ({ type, id, config, req }: HandlerArgs) => {
     return true;
   });
 
+  torrents.sort((a, b) => (b.seeds || 0) - (a.seeds || 0));
+  torrents = torrents.slice(0, 10);
+
   let streams = (
     await Promise.all(
       torrents.map((torrent) =>
