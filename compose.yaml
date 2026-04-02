@@ -1,11 +1,12 @@
 services:
   stremio-addon-server:
-    image: nyakaspeter/stremio-torrent-stream:latest
+    build: .
     container_name: stremio-addon-server
     environment:
       - JACKETT_URL=http://jackett:9117
       - JACKETT_KEY=${JACKETT_KEY}
       - TORRENT_TIMEOUT=15000
+      - HTTPS_METHOD=local-ip.medicmobile.org
     ports:
       - 58827:58827
       - 58828:58828
