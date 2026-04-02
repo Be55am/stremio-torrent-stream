@@ -85,6 +85,7 @@ export const manifest: Manifest = {
       title: "Use titles for torrent search",
       key: "searchByTitle",
       type: "checkbox",
+      default: "checked",
     },
     {
       title: "Do not show HDR results",

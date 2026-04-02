@@ -59,8 +59,7 @@ export const streamHandler = async ({ type, id, config, req }: HandlerArgs) => {
 
   const [imdbId, season, episode] = id.split(":");
 
-  const queries = [imdbId];
-  if (config.searchByTitle === "on") queries.push(...(await getTitles(imdbId)));
+  const queries = [imdbId, ...(await getTitles(imdbId))];
 
   torrents = (
     await Promise.all(
