@@ -61,6 +61,8 @@ export const streamHandler = async ({ type, id, config, req }: HandlerArgs) => {
 
   const queries = [imdbId, ...(await getTitles(imdbId))];
 
+  console.log(`Searching: ${queries.join(", ")} | sources: ${sources.join(", ") || "all"} | categories: ${categories.join(", ") || "all"}`);
+
   torrents = (
     await Promise.all(
       queries.map((query) =>
