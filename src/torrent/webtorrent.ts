@@ -1,4 +1,5 @@
 import fs from "fs-extra";
+// @ts-ignore
 import MemoryStore from "memory-chunk-store";
 import os from "os";
 import path from "path";

@@ -41,6 +41,8 @@ interface HandlerArgs {
 }
 
 export const streamHandler = async ({ type, id, config, req }: HandlerArgs) => {
+  if (!config) return { streams: [] };
+
   let torrents: TorrentSearchResult[] = [];
 
   const categories: TorrentCategory[] = [];
