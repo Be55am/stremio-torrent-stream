@@ -2,6 +2,9 @@ services:
   stremio-addon-server:
     image: nyakaspeter/stremio-torrent-stream:latest
     container_name: stremio-addon-server
+    environment:
+      - JACKETT_URL=http://jackett:9117
+      - JACKETT_KEY=${JACKETT_KEY}
     ports:
       - 58827:58827
       - 58828:58828

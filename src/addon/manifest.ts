@@ -23,6 +23,7 @@ export const manifest: Manifest = {
       title: "Enable Jackett search",
       key: "enableJackett",
       type: "checkbox",
+      default: "checked",
     },
     {
       title: "Jackett API URL",

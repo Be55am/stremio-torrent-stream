@@ -1,3 +1,4 @@
+import process from "node:process";
 import { Request } from "express";
 import Stremio from "stremio-addon-sdk";
 import {
@@ -47,7 +48,7 @@ export const streamHandler = async ({ type, id, config, req }: HandlerArgs) => {
   if (type === "series") categories.push("show");
 
   const sources: TorrentSource[] = [];
-  if (config.enableJackett === "on") sources.push("jackett");
+  if (config.enableJackett === "on" || (process.env.JACKETT_URL && process.env.JACKETT_KEY)) sources.push("jackett");
   if (config.enableNcore === "on") sources.push("ncore");
   if (config.enableInsane === "on") sources.push("insane");
   if (config.enableItorrent === "on") sources.push("itorrent");
