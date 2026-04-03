@@ -47,12 +47,10 @@
     "onlyBuiltDependencies": [
       "bufferutil",
       "esbuild",
-      "eztv-crawler",
       "fs-native-extensions",
       "node-datachannel",
       "utf-8-validate",
-      "utp-native",
-      "yts-api-node"
+      "utp-native"
     ]
   }
 }
