@@ -12,8 +12,8 @@ export const searchJackett = async (
   jackettKey?: string
 ): Promise<TorrentSearchResult[]> => {
   try {
-    const url = jackettUrl || JACKETT_URL;
-    const key = jackettKey || JACKETT_KEY;
+    const url = JACKETT_URL || jackettUrl;
+    const key = JACKETT_KEY || jackettKey;
 
     if (!url || !key) {
       console.error(`Jackett search skipped: url=${url} key=${key ? "set" : "missing"}`);
