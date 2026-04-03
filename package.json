@@ -43,6 +43,16 @@
   "pnpm": {
     "patchedDependencies": {
       "stremio-addon-sdk@1.6.10": "patches/stremio-addon-sdk@1.6.10.patch"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "bufferutil",
+      "esbuild",
+      "eztv-crawler",
+      "fs-native-extensions",
+      "node-datachannel",
+      "utf-8-validate",
+      "utp-native",
+      "yts-api-node"
+    ]
   }
 }
