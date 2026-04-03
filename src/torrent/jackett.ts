@@ -15,8 +15,12 @@ export const searchJackett = async (
     const url = jackettUrl || JACKETT_URL;
     const key = jackettKey || JACKETT_KEY;
 
-    if (!url || !key) return [];
+    if (!url || !key) {
+      console.error(`Jackett search skipped: url=${url} key=${key ? "set" : "missing"}`);
+      return [];
+    }
 
+    console.log(`Jackett searching: url=${url} key=${key ? "set" : "missing"}`);
     const client = new JackettApi(url, key);
 
     const res = await client.search({
@@ -35,6 +39,7 @@ export const searchJackett = async (
       magnet: result.MagnetUri || undefined,
     }));
   } catch (error) {
+    console.error(`Jackett search error: ${error instanceof Error ? error.message : error}`);
     return [];
   }
 };
